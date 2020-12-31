@@ -16,10 +16,10 @@ function App() {
             <Search />
           </Grid>
           <Grid item container spacing={4}>
-            <Grid item md={6}>
+            <Grid item md={8}>
               <Results />
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={4}>
               <Nominations />
             </Grid>
           </Grid>
