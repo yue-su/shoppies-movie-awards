@@ -2,7 +2,6 @@ import React, { useState, createContext } from "react";
 
 export const movieContext = createContext();
 
-const apiURL = "http://www.omdbapi.com/apikey.aspx";
 const moviesInit = [];
 
 const MoviesProvider = ({ children }) => {
@@ -13,7 +12,6 @@ const MoviesProvider = ({ children }) => {
       value={{
         movies,
         setMovies,
-        apiURL,
       }}
     >
       {children}
