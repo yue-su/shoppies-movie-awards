@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, createContext } from "react";
 
 export const movieContext = createContext();
 
@@ -12,6 +12,8 @@ const MoviesProvider = ({ children }) => {
     <movieContext.Provider
       value={{
         movies,
+        setMovies,
+        apiURL,
       }}
     >
       {children}
