@@ -1,11 +1,26 @@
-import React from "react";
-import { Paper, Box, Typography } from "@material-ui/core";
+import React, { useContext } from "react";
+import { Paper, Box, Typography, Grid } from "@material-ui/core";
+import { movieContext } from "../providers/MoviesProvider";
+import MovieCard from "./MovieCard";
 
 const Nominations = () => {
+  const { nominations, removeNomination } = useContext(movieContext);
+
   return (
     <Paper>
       <Box p={3} minHeight="200px">
         <Typography variant="h6">Nominations</Typography>
+        <Grid container spacing={2} direction="column">
+          {nominations.map((nomination) => {
+            return (
+              <MovieCard
+                movie={nomination}
+                button={"remove"}
+                action={removeNomination}
+              />
+            );
+          })}
+        </Grid>
       </Box>
     </Paper>
   );

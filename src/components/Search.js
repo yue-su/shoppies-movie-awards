@@ -19,7 +19,6 @@ const Search = () => {
         setMovieList(movies.data.Search);
       } else if (movies.data.Response === "False") {
         setError(movies.data.Error);
-        console.log(error);
       }
     });
   }, [titleDebounced]);
