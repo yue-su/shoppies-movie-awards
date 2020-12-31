@@ -23,7 +23,6 @@ const MoviesProvider = ({ children }) => {
     const updatedList = nominations.filter(
       (nomination) => nomination.imdbID !== movie.imdbID
     );
-    console.log("updated list is:", updatedList);
     setNominations(updatedList);
   };
 

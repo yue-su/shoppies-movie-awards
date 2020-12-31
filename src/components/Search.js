@@ -7,7 +7,7 @@ import { movieContext } from "../providers/MoviesProvider";
 const apiURL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
 
 const Search = () => {
-  const { setMovieList } = useContext(movieContext);
+  const { setMovieList, nominations } = useContext(movieContext);
   const [title, setTitle] = useState("");
   const [error, setError] = useState("");
 
@@ -16,7 +16,15 @@ const Search = () => {
   useEffect(() => {
     axios.get(apiURL + "&s=" + titleDebounced).then((movies) => {
       if (movies.data.Search) {
-        setMovieList(movies.data.Search);
+        const moviesList = [...movies.data.Search];
+        for (let movie of moviesList) {
+          for (let nomination of nominations) {
+            if (movie.imdbID === nomination.imdbID) {
+              movie.isNominated = true;
+            }
+          }
+        }
+        setMovieList(moviesList);
       } else if (movies.data.Response === "False") {
         setError(movies.data.Error);
       }

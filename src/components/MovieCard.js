@@ -20,7 +20,8 @@ const useStyles = makeStyles({
 const MovieCard = ({ movie, button, action }) => {
   const classes = useStyles();
 
-  const { imdbID, Poster, Title, Year } = movie;
+  const { imdbID, Poster, Title, Year, isNominated } = movie;
+  console.log(isNominated);
 
   return (
     <Grid item key={imdbID}>
@@ -49,6 +50,7 @@ const MovieCard = ({ movie, button, action }) => {
                 onClick={() => action(movie)}
                 fullWidth
                 variant="outlined"
+                disabled={isNominated ? isNominated : false}
               >
                 {button}
               </Button>
