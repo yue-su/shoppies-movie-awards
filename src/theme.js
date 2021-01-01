@@ -29,19 +29,12 @@ export const theme = createMuiTheme({
       main: colorHue.background,
       contrastText: colorHue.main,
     },
-    secondary: {
-      main: colorHue.paragraph,
-      contrastText: colorHue.ButtonText,
-    },
     background: {
       default: colorHue.paragraph,
       paper: colorHue.headline,
     },
     warning: {
       main: colorHue.Button,
-    },
-    error: {
-      main: colorHue.Tertiary,
     },
   },
 });

@@ -38,7 +38,7 @@ const MovieCard = ({ movie, button, action }) => {
       <a.div style={lifting}>
         <Card className={classes.card} elevation={2}>
           <Grid container spacing={2}>
-            <Grid item md={4}>
+            <Grid item sm={4}>
               <Avatar
                 variant="square"
                 src={Poster}
@@ -49,7 +49,7 @@ const MovieCard = ({ movie, button, action }) => {
               item
               container
               direction="column"
-              md={8}
+              sm={8}
               justify="space-between"
             >
               <CardContent>

@@ -17,7 +17,7 @@ function App() {
             <Grid item>
               <Search />
             </Grid>
-            <Grid item container spacing={4}>
+            <Grid item container spacing={4} wrap="nowrap">
               <Grid item md={8}>
                 <Results />
               </Grid>
