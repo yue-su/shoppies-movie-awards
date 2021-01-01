@@ -10,7 +10,7 @@ const Results = () => {
     <Paper>
       <Box p={3} minHeight="200px">
         <Typography gutterBottom variant="h6">
-          Results for {titleRef.current}
+          Results for "{titleRef.current}"
         </Typography>
 
         <Grid container spacing={2}>
