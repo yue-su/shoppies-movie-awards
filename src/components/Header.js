@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <Grid item>
-      <Typography variant="h2">The Shoopies</Typography>
+      <Typography variant="h2">The Shoppies</Typography>
       <Snackbar
         open={error ? true : false}
         autoHideDuration={4000}
