@@ -6,10 +6,11 @@ import {
   Typography,
 } from "@material-ui/core";
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import useDebounce from "../hooks/useDebounce";
 import { movieContext } from "../providers/MoviesProvider";
 import SearchIcon from "@material-ui/icons/Search";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const apiURL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
 
@@ -17,7 +18,7 @@ const Search = () => {
   const { setMovieList, nominations, titleRef, errorHandler } = useContext(
     movieContext
   );
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useLocalStorage("title", "");
 
   const titleDebounced = useDebounce(title, 500);
 
@@ -58,6 +59,7 @@ const Search = () => {
           Movie Title
         </Typography>
         <TextField
+          placeholder="Search movie title"
           onChange={handleChange}
           value={title}
           fullWidth

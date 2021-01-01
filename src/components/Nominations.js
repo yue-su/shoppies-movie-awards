@@ -9,10 +9,10 @@ const Nominations = () => {
   return (
     <Paper>
       <Box p={3} minHeight="200px">
-        <Typography gutterBottom variant="h6">
+        <Typography paragraph variant="h6">
           Nominations
         </Typography>
-        <Grid container spacing={2} direction="column">
+        <Grid container spacing={2} justify="center">
           {nominations.map((nomination) => {
             return (
               <MovieCard
