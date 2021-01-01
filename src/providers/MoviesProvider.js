@@ -1,4 +1,5 @@
 import React, { useState, createContext, useRef } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export const movieContext = createContext();
 
@@ -7,8 +8,11 @@ const nominationsInit = [];
 const errorInit = "";
 
 const MoviesProvider = ({ children }) => {
-  const [movies, setMovies] = useState(moviesInit);
-  const [nominations, setNominations] = useState(nominationsInit);
+  const [movies, setMovies] = useLocalStorage("movies", moviesInit);
+  const [nominations, setNominations] = useLocalStorage(
+    "nominations",
+    nominationsInit
+  );
   const [error, setError] = useState(errorInit);
   const titleRef = useRef("");
 

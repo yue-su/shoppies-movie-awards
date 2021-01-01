@@ -1,7 +1,11 @@
 import { Grid, Snackbar, Typography } from "@material-ui/core";
 import React, { useContext } from "react";
 import { movieContext } from "../providers/MoviesProvider";
-import Alert from "./Alert";
+import MuiAlert from "@material-ui/lab/Alert";
+
+const Alert = (props) => {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+};
 
 const Header = () => {
   const { error, errorHandler } = useContext(movieContext);
