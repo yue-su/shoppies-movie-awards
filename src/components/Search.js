@@ -11,7 +11,7 @@ import useDebounce from "../hooks/useDebounce";
 import { movieContext } from "../providers/MoviesProvider";
 import SearchIcon from "@material-ui/icons/Search";
 
-const apiURL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
+const apiURL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
 
 const Search = () => {
   const { setMovieList, nominations, titleRef, errorHandler } = useContext(
