@@ -9,11 +9,14 @@ const Nominations = () => {
   return (
     <Paper>
       <Box p={3} minHeight="200px">
-        <Typography variant="h6">Nominations</Typography>
+        <Typography gutterBottom variant="h6">
+          Nominations
+        </Typography>
         <Grid container spacing={2} direction="column">
           {nominations.map((nomination) => {
             return (
               <MovieCard
+                key={nomination.imdbID}
                 movie={nomination}
                 button={"remove"}
                 action={removeNomination}

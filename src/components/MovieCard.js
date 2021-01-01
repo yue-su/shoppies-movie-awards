@@ -20,11 +20,10 @@ const useStyles = makeStyles({
 const MovieCard = ({ movie, button, action }) => {
   const classes = useStyles();
 
-  const { imdbID, Poster, Title, Year, isNominated } = movie;
-  console.log(isNominated);
+  const { Poster, Title, Year, isNominated } = movie;
 
   return (
-    <Grid item key={imdbID}>
+    <Grid item>
       <Card>
         <Grid container spacing={2}>
           <Grid item md={4}>

@@ -4,12 +4,14 @@ import { movieContext } from "../providers/MoviesProvider";
 import MovieCard from "./MovieCard";
 
 const Results = () => {
-  const { movies, addNomination } = useContext(movieContext);
+  const { movies, addNomination, titleRef } = useContext(movieContext);
 
   return (
     <Paper>
       <Box p={3} minHeight="200px">
-        <Typography variant="h6">Results for</Typography>
+        <Typography gutterBottom variant="h6">
+          Results for {titleRef.current}
+        </Typography>
 
         <Grid container spacing={2}>
           {movies.map((movie) => {
@@ -18,6 +20,7 @@ const Results = () => {
                 movie={movie}
                 button={"nominate"}
                 action={addNomination}
+                key={movie.imdbID}
               />
             );
           })}
