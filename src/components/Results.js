@@ -9,11 +9,11 @@ const Results = () => {
   return (
     <Paper>
       <Box p={3} minHeight="200px">
-        <Typography gutterBottom variant="h6">
+        <Typography paragraph variant="h6">
           Results for {titleRef.current}
         </Typography>
 
-        <Grid container spacing={2}>
+        <Grid container spacing={2} justify="space-evenly">
           {movies.map((movie) => {
             return (
               <MovieCard
